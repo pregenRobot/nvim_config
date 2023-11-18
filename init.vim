@@ -1,10 +1,9 @@
-
 call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -12,6 +11,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/Conque-Shell'
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
+Plug 'https://github.com/ryanoasis/vim-devicons'
+Plug 'google/vim-jsonnet'
+" Plug 'puremourning/vimspector'
+" Plug 'ycm-core/YouCompleteMe'
+set encoding=UTF-8
 call plug#end()
 
 inoremap jj <Esc>
@@ -20,6 +24,7 @@ nnoremap <C-h> <C-W>h
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
+vnoremap p "_dP
 
 set clipboard+=unnamedplus
 
@@ -33,6 +38,9 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set scrolloff=10
+syntax enable
+set title
+set titlestring=%F
 " ========== NERD TREE ========== "
 
 nnoremap <leader><tab> :NERDTreeToggle<CR>
@@ -55,6 +63,7 @@ let g:fzf_preview_window = ['right,50%', 'ctrl-/']
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>h :History<CR>
 nnoremap <space><space> :GFiles<CR>
+nnoremap <space>f :Rg<CR>
 
 " ========== COC ========== "
 
@@ -124,4 +133,7 @@ let g:indentLine_setColors = 0
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='gruvbox'
+
+
+" ========== ETC CONFIGURATIONS ==========
 
